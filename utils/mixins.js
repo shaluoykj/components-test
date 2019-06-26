@@ -73,7 +73,6 @@ const mixin = {
 					checkFlag //校验结果，如果校验通过则是默认的true，否则校验不过为false
 				});
 			}
-
 		}
 	},
 	filters: {
