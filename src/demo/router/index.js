@@ -1,4 +1,4 @@
-import Vue from 'vue'
+	import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import {homeTest} from './homeTest'
@@ -47,5 +47,22 @@ const showRouter= new Router({
 showRouter.afterEach((to)=>{
 	const path=(to.path || '').replace(/^\//,'');
 	document.body.setAttribute('data-root',path.split('/').join('-'));
+//	WeixinJSBridge.call('hideOptionMenu');
+//	hideOptionMenu();
 })
+function hideOptionMenu(){
+	if (typeof WeixinJSBridge == "undefined") {
+	    if (document.addEventListener) {
+	        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+	    } else if (document.attachEvent) {
+	        document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+	        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+	    }
+	} else {
+	    onBridgeReady();
+	}
+}
+function onBridgeReady() {
+	    WeixinJSBridge.call('hideOptionMenu');
+	}
 export default showRouter;

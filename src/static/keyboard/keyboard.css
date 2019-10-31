@@ -1,0 +1,290 @@
+﻿/*
+*可配置样式 start
+*样式顺序不能随意改变，后定义的样式优先级最高
+只能配置 color、background-color、border 属性；
+*/
+*{
+	margin:0;
+	padding: 0;
+}
+/*键盘整体样式*/
+#keyboard{
+	margin:0;
+	padding:0;
+	background-color:#D2D5DA;
+	width:100%;
+	height:205px;
+	text-align:left;
+	display:none;
+	position:fixed;
+	bottom:0;
+	left:0;
+	z-index: 9999999999;
+}
+/*解决键盘覆盖输入框留下的空隙*/
+#keyboard-placeholder {
+	width:100%;
+	height:210px;
+	display:none;
+}
+#keyboard .keyboard-body,#keyboard .keyboard-body ul{
+	height: 100%;
+	width:100%;
+}
+#keyboard .keyboard-body ul li{
+	position: relative;
+	height:50px;
+	box-sizing: border-box;
+	line-height: 50px;
+}
+/*键盘上所有按键样式*/
+#keyboard li span{-moz-border-radius: 5px;      /* Gecko browsers */
+	-webkit-border-radius: 5px;   /* Webkit browsers */
+	border-radius:5px;            /* W3C syntax */
+	background-color:#fff;
+	border:1px solid #777;
+	width: 9%;
+	height: 45px;
+	display: -webkit-inline-box;
+	display: inline-block;
+	box-sizing: border-box;
+	text-align: -webkit-center;
+	font-size: 26px;
+	line-height: 45px;
+}
+/*键盘上所有字符按键样式*/
+#keyboard .key{color:#000;}
+/*键盘上所有控制按键样式，如：大小写切换键、数字字符切换键、字母数字切换键、删除键、完成键*/
+#keyboard .ctrl{background-color:#ACB5BE;}
+/*键盘中的第二行*/
+#keyboard .keyboard-0 .keyboard-li2,#keyboard .keyboard-1 .keyboard-li2,#keyboard .keyboard-2 .keyboard-li2,#keyboard .keyboard-4 .keyboard-li4{
+	text-align: center;
+}
+/*切换大小写键*/
+#keyboard .caps{
+	position: absolute;
+	left: 0;
+	width: 14%;
+}
+/*字母键*/
+#keyboard .abc{
+	/*font-size: 30px;*/
+	width: 20%;
+}
+/*上一页和下一页*/
+#keyboard .nextPage,#keyboard .lastPage{
+	width: 14%;
+	position: absolute;
+	left: 0;
+	font-size: 26px;
+	font-weight: 500;
+}
+/*功能键*/
+#keyboard .funKey{
+	background-color: #ACB5BE;
+}
+/*!*字符键*!*/
+#keyboard .String{
+	width: 20%;
+}
+#keyboard span.up{
+	background-color: #777!important;
+}
+/*空格键*/
+#keyboard .space{
+	width: 22%;
+}
+/*空格键*/
+#keyboard .keyboard-0 .keyboard-li3 .space,
+#keyboard .keyboard-1 .keyboard-li3 .space,
+#keyboard .keyboard-2 .keyboard-li3 .space,
+#keyboard .keyboard-body .keyboard-4 .keyboard-li5 .space{
+	position: absolute;
+	left: 40.6%;
+	font-size: 50px;
+	width:30%;
+}
+#keyboard .keyboard-3 .space{
+	font-weight: bold;
+}
+
+/*数字键*/
+#keyboard .keyboard-0 .numb,
+#keyboard .keyboard-1 .numb,
+#keyboard .keyboard-2 .numb,
+#keyboard .keyboard-4 .numb{
+	width: 19%;
+	position: absolute;
+}
+#keyboard ul.keyboard-3 .keyboard-li3 span.numb{
+	font-size: 30px;
+}
+/*确认键*/
+#keyboard .keyboard-0 .keyboard-li3 span.ok,
+#keyboard .keyboard-1 .keyboard-li3 span.ok,
+#keyboard .keyboard-2 .keyboard-li3 span.ok,
+#keyboard .keyboard-body .keyboard-4 .keyboard-li5 span.ok{
+	position: absolute;
+	left:71.6%;
+	font-size: 38px;
+	width: 26.5%;
+}
+/*完成键*/
+#keyboard .ok{
+	width: 18%;
+	font-size: 30px;
+	font-weight: 600;
+}
+#keyboard .numb{
+	width: 18%;
+}
+/*删除键*/
+#keyboard .del{
+	width: 14%;
+}
+
+#keyboard .keyboard-0 .keyboard-li2 span.del,
+#keyboard .keyboard-1 .keyboard-li2 span.del,
+#keyboard .keyboard-2 .keyboard-li2 span.del,
+#keyboard .keyboard-4 .keyboard-li4 span.del{
+	position: absolute;
+	right: 1.1%;
+	width: 13%;
+}
+/*隐藏生成的多余行数*/
+#keyboard ul.keyboard-3 .keyboard-li0,
+#keyboard ul.keyboard-4 .keyboard-li0,
+#keyboard ul.keyboard-4 .keyboard-li1,
+#keyboard ul.keyboard-3 .keyboard-li2 .caps {
+	display: none;
+}
+#keyboard .keyboard-0 .keyboard-li0 span:first-child     /*键盘第一行第一个子元素*/
+#keyboard .keyboard-1 .keyboard-li0 span:first-child,
+#keyboard .keyboard-2 .keyboard-li0 span:first-child,
+#keyboard .keyboard-4 .keyboard-li2 span:first-child,
+#keyboard .keyboard-0 .keyboard-li0 span:first-child     /*键盘第三行第一个子元素*/
+#keyboard .keyboard-1 .keyboard-li2 span:first-child,
+#keyboard .keyboard-2 .keyboard-li2 span:first-child,
+#keyboard .keyboard-4 .keyboard-li4 span:first-child,
+#keyboard .keyboard-0 .keyboard-li2 span:first-child,		/*键盘第四行第一个子元素*/
+#keyboard .keyboard-1 .keyboard-li2 span:first-child,
+#keyboard .keyboard-2 .keyboard-li2 span:first-child,
+#keyboard .keyboard-4 .keyboard-li4 span:first-child{
+	margin-left: 3px;
+}
+/*键盘的第一行按键（除了数字页）*/
+#keyboard .keyboard-0 .keyboard-li0 span,
+#keyboard .keyboard-1 .keyboard-li0 span,
+#keyboard .keyboard-2 .keyboard-li0 span,
+#keyboard .keyboard-4 .keyboard-li2 span{
+	margin: 5px 0.4% 0% 0.5%;
+}
+/*键盘的第二行按键（除了数字页）*/
+#keyboard .keyboard-0 .keyboard-li1 span,
+#keyboard .keyboard-1 .keyboard-li1 span,
+#keyboard .keyboard-2 .keyboard-li1 span,
+#keyboard .keyboard-4 .keyboard-li3 span{
+	margin: 5px 0.4% 0% 0.5%;
+}
+/*键盘的第三行按键（除了数字页）*/
+#keyboard .keyboard-0 .keyboard-li2 span,
+#keyboard .keyboard-1 .keyboard-li2 span,
+#keyboard .keyboard-2 .keyboard-li2 span,
+#keyboard .keyboard-4 .keyboard-li4 span{
+	margin: 5px 0.4% 0% 0.5%;
+}
+/*键盘的第四行按键（除了数字页）*/
+#keyboard .keyboard-0 .keyboard-li3 span,
+#keyboard .keyboard-1 .keyboard-li3 span,
+#keyboard .keyboard-2 .keyboard-li3 span,
+#keyboard .keyboard-4 .keyboard-li5 span{
+	margin: 5px 0.4% 0% 0.5%;
+}
+/*键盘的第二行（除了数字页）*/
+#keyboard .keyboard-0 .keyboard-li1,
+#keyboard .keyboard-1 .keyboard-li1,
+#keyboard .keyboard-2 .keyboard-li1,
+#keyboard .keyboard-4 .keyboard-li3{
+	text-align: center;
+}
+#keyboard .keyboard-0 .keyboard-li3 span.abc,
+#keyboard .keyboard-1 .keyboard-li3 span.abc,
+#keyboard .keyboard-2 .keyboard-li3 span.abc,
+#keyboard .keyboard-body .keyboard-4 .keyboard-li5 span.abc{
+	font-size: 30px;
+}
+/*数字页面的按键*/
+#keyboard .keyboard-3 li span{
+	display: inline-block;
+	width: 95%;
+	height: 45px;
+	float: left;
+	margin-top: 4px;
+	line-height: 45px;
+	margin-left: 2%;
+}
+/*数字页面的第一列*/
+#keyboard ul.keyboard-3 .keyboard-li1{
+	width:20%;
+	display: block;
+	float: left;
+	height:200px;
+	margin-left: 1.5%;
+}
+/*数字页面的第三列*/
+#keyboard ul.keyboard-3 .keyboard-li2{
+	width: 20%;
+	height: 200px;
+	display: block;
+	float: right;
+	margin-right: 1.9%;
+}
+/*数字页面第三列按键*/
+#keyboard ul.keyboard-3 .keyboard-li2 span{
+	margin-left: 5%;
+}
+/*数字页面中间的数字列*/
+#keyboard ul.keyboard-3 .keyboard-li3{
+	margin: 0 20%;
+	width:60%;
+	height: 200px;
+	text-align:-webkit-center;
+	padding: 0 1%;
+}
+#keyboard ul.keyboard-3 span{
+	margin-bottom:1.2px;
+}
+
+/*数字页面中间数字列按键*/
+#keyboard ul.keyboard-3 .keyboard-li3 span{
+	width:30%;
+	height:45px;
+	margin-top: 4px;
+	margin-left: 2%;
+	line-height: 45px;
+}
+
+/*键盘上所有按键被按下的样式*/
+#keyboard .key_down{background-color:#777!important;color:#000;}
+/*键盘上所有按键被按下时，上方弹出放大显示的样式*/
+#keyboard .copy,#keyboard .copyB,#keyboard .copyC{background-color:#fff!important;color:#000;border:solid 1px #6cf; position:absolute;}
+
+/*!*密码框样式*!*/
+.keyboardInput{
+	display: block;
+	box-sizing:border-box;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #000;
+}
+/*!*密码框获取焦点状态样式*!*/
+.keyboardInputSelected{
+	border: 1px solid #6CF!important;
+}
+/*!*密码框失去焦点且值为空的样式*!*/
+.keyboardInputVoid{
+	color:#CCC!important;
+	border: 1px solid #000;
+}
+
+/*可配置样式 end*/

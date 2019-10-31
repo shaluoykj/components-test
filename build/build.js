@@ -6,6 +6,7 @@ process.env.NODE_ENV = 'production'
 const ora = require('ora')
 const rm = require('rimraf')
 const path = require('path')
+const fs = require('fs');//目录复制方法
 const chalk = require('chalk')
 const webpack = require('webpack')
 const config = require('../config')

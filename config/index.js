@@ -17,11 +17,25 @@ module.exports = {
 				pathRewrite: {
 					'^/test': '' //重写接口,后面可以使重写的新路径，一般不做更改
 				},
+			},
+			'/spring': {
+				traget: 'http://localhost:8080', //自己
+				changeOrigin: true,
+				pathRewrite: {
+					'^/spring': '' //重写接口,后面可以使重写的新路径，一般不做更改
+				},
+			},
+			'/testeditor': {
+				traget: 'http://192.168.43.149:8080/ueditor/config', //自己
+				changeOrigin: true,
+				pathRewrite: {
+					'^/test': '' //重写接口,后面可以使重写的新路径，一般不做更改
+				},
 			}
 		},
 		// Various Dev Server settings
 		host: '0.0.0.0', // can be overwritten by process.env.HOST
-		port: 8090, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+		port: 8089, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
 		autoOpenBrowser: true,
 		errorOverlay: true,
 		notifyOnErrors: true,
@@ -56,7 +70,8 @@ module.exports = {
 
 		// Paths
 		assetsRoot: path.resolve(__dirname, '../dist'),
-		assetsSubDirectory: 'static',
+		//		assetsSubDirectory: 'static',
+		assetsSubDirectory: '',
 		assetsPublicPath: '/',
 
 		/**

@@ -4,11 +4,11 @@ const mixin = {
 			if(this.isNotEmpty(flag)) {
 				if(flag.indexOf('/') != -1) {
 					this.$router.push({
-						path: flag
+						path: flag,
 					});
 				} else {
 					this.$router.push({
-						name: flag
+						name: flag,
 					});
 				}
 			} else {

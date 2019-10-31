@@ -14,8 +14,13 @@
 		</div>
 		<div class="form-row">
 			<span>金额测试</span>
-			<input maxlength="12" @input="clearNoNum('amount')" v-model="info.amount" placeholder="请输入金额">
+			<input maxlength="12" 
+				@blur="clearNoNum('amount')"
+				v-model="info.amount" placeholder="请输入金额"
+				>
 		</div>
+
+		
 		<div>
 			<button @click="checkParams(paramslist,info,submit)">提交</button>
 		</div>
@@ -23,7 +28,9 @@
 </template>
 
 <script>
+	
 	import regularList from '../../utils/pattern'
+	
 	export default {
 		data() {
 			return {
@@ -68,10 +75,12 @@
 		},
 		mounted: function() {},
 		methods: {
-			clearNoNum(key, flag) {
+			clearNoNum(key, flag) {				
 				if(flag) {
 					this.info[key] = this.info[key].replace(/[^\d]/g, ''); //剔除所有非数字
 				} else {
+					setTimeout(function()  { 
+   					}, 4000);
 					//只保留数字和小数点，其余字符剔除
 					if(this.info[key].indexOf('.') === 0) {
 						this.info[key] = ""; //第一位不能是小数点，否则剔除成空串
@@ -79,13 +88,17 @@
 					if(this.info[key] && this.info[key].length >= 2 && this.info[key].indexOf('0') === 0 && this.info[key].indexOf('.') !== 1) {
 						this.info[key] = "0"; //第一位是0，第二位则必须是小数点，否则只保留第一位0
 					}
-					this.info[key] = this.info[key].replace(/[^\d.]/g, ''); //只保留数字和小数点
+					//this.info[key] = this.info[key].replace(/[^\d.]/g, ''); //只保留数字和小数点
+					this.info[key] = this.info[key].replace(/[^\d\.]/g, ''); //只保留数字和小数点
+					
 					this.info[key] = this.info[key].replace(/\.{2,}/g, '.'); //如果有连续多个小数点，只保留一个
+					
 					this.info[key] = this.info[key].replace(".", '$#$').replace(/\./g, '').replace('$#$', '.'); //去除多余的小数点，1.1.1.1类似这种数
 					this.info[key] = this.info[key].replace(/^(\\-)*(\d+)\.(\d\d).*$/, '$1$2.$3'); //如果有小数部分，只保留小数点后两位
-					if(this.info[key].indexOf('.') < 0 && this.info[key] !== "") {
-						this.info[key] = `${parseFloat(this.info[key])}`;
-					}
+//					if(this.info[key].indexOf('.') < 0 && this.info[key] !== "") {
+//						this.info[key] = `${parseFloat(this.info[key])}`;						
+//					}
+					console.error("key",this.info[key]);
 				}
 			},
 			submit(result) {

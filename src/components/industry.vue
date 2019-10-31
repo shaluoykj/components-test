@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<!--遮罩-->
-		<div class="bg-shadow" v-show="showSelect"></div>
+		<div class="bg-shadow" v-show="showSelect" @click="submit(false)"></div>
 		<!--选项-->
 		<div class="box-select" v-show="showSelect">
 			<div class="header">
