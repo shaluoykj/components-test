@@ -49,6 +49,12 @@
 					},{
 						title: 'headerTest',
 						path: 'headerTest'
+					},{
+						title: 'table',
+						path: 'table'
+					},{
+						title: 'signUp',
+						path: 'signUp'
 					},
 				]
 			}

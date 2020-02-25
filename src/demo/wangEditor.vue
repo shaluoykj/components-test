@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<div id="editor"></div>
+		<div id="editor" ref="ue"></div>
+		<div @click="submit">提交</div>
 	</div>
 </template>
 
@@ -24,25 +25,26 @@
 		},
 		created: function() {},
 		mounted() {
-			var editor = new Editor("#editor");
-			editor.customConfig.uploadImgServer = 'http://localhost:8080/test/upload';
+			this.editor = new Editor("#editor");
+			this.editor.customConfig.uploadImgServer = 'http://localhost:8080/test/upload';
 			//			this.editor.customConfig.customUploadImg = function(files, insert) {
 			//				console.error(files);
 			//				insert(imgUrl)
 			//			};
-			editor.customConfig.uploadFileName = 'file';
-			editor.customConfig.uploadImgHooks = {
+			this.editor.customConfig.uploadFileName = 'file';
+			this.editor.customConfig.uploadImgHooks = {
 				customInsert: function(insertImg, result, editor) {
 					var url = result &&result.data&& (result.url ? result.url:result.data.url);
 					insertImg(url);
 				}
 			}
-			editor.create();
+			this.editor.create();
 		},
 		methods: {
 			submit() {
-				this.content = this.$refs.ue.getUEContent();
-				console.error(this.$refs.ue.getUEContent());
+
+				console.error(this.editor.txt.html())
+//				console.error(this.$refs.ue.getUEContent());
 			},
 			handleRemove(file, fileList) {
 				console.log(file, fileList);

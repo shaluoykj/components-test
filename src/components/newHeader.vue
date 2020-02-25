@@ -1,5 +1,8 @@
 <template>
 	<div class="main-container">
+		<header></header>
+		<aside></aside>
+		<main></main>
 		<div @click="scroll('left')" class="left-icon" v-show="isScroll">左边</div>
 		<div class="menu-container" ref="content">
 			<div class="menu-scroll" ref="scroll" :style="{ transform: `translateX(${this.currentTranslateX}px)` }">

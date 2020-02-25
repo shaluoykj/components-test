@@ -6,7 +6,7 @@ const homeTest = [{
 	},
 	component: () =>
 		import('@/demo/industry')
-},{
+}, {
 	path: '/ueditor',
 	name: 'ueditor',
 	meta: {
@@ -14,7 +14,7 @@ const homeTest = [{
 	},
 	component: () =>
 		import('@/demo/ueditor')
-},{
+}, {
 	path: '/password',
 	name: 'password',
 	meta: {
@@ -22,7 +22,7 @@ const homeTest = [{
 	},
 	component: () =>
 		import('@/demo/password')
-},{
+}, {
 	path: '/iframe',
 	name: 'iframe',
 	meta: {
@@ -30,7 +30,7 @@ const homeTest = [{
 	},
 	component: () =>
 		import('@/demo/iframe')
-},{
+}, {
 	path: '/electronicaccount',
 	name: 'electronicaccount',
 	meta: {
@@ -38,7 +38,7 @@ const homeTest = [{
 	},
 	component: () =>
 		import('@/demo/electronicaccount')
-},{
+}, {
 	path: '/wangEditor',
 	name: 'wangEditor',
 	meta: {
@@ -46,7 +46,7 @@ const homeTest = [{
 	},
 	component: () =>
 		import('@/demo/wangEditor')
-},{
+}, {
 	path: '/wangEditor',
 	name: 'wangEditor',
 	meta: {
@@ -54,7 +54,7 @@ const homeTest = [{
 	},
 	component: () =>
 		import('@/demo/wangEditor')
-},{
+}, {
 	path: '/address',
 	name: 'address',
 	meta: {
@@ -62,7 +62,7 @@ const homeTest = [{
 	},
 	component: () =>
 		import('@/demo/address')
-},{
+}, {
 	path: '/websocket',
 	name: 'websocket',
 	meta: {
@@ -70,7 +70,7 @@ const homeTest = [{
 	},
 	component: () =>
 		import('@/demo/websocket')
-},{
+}, {
 	path: '/headerTest',
 	name: 'headerTest',
 	meta: {
@@ -78,6 +78,22 @@ const homeTest = [{
 	},
 	component: () =>
 		import('@/demo/headerTest')
+}, {
+	path: '/table',
+	name: 'table',
+	meta: {
+		title: 'table'
+	},
+	component: () =>
+		import('@/demo/pages/table')
+}, {
+	path: '/signUp',
+	name: 'signUp',
+	meta: {
+		title: 'signUp'
+	},
+	component: () =>
+		import('@/demo/pages/SignUp')
 }];
 export {
 	homeTest,

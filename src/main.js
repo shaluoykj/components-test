@@ -5,14 +5,13 @@ import Vue from 'vue'
 import axios from 'axios'
 import qs from 'qs'
 import VConsole from 'vconsole'
-
 import App from './App'
 import router from './demo/router'
 import mixin from '../utils/mixins.js'
-
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-
+import Vuex from 'vuex'
+Vue.use(Vuex)
 //import '../public/ueditor/ueditor.config.js';
 ////	import '../../public/ueditor/ueditor.all.js';
 //	import '../public/ueditor/ueditor.all.min.js';
@@ -38,9 +37,23 @@ axios.interceptors.request.use((config) => {
 Vue.use(ElementUI);
 Vue.prototype.axios = axios;
 /* eslint-disable no-new */
+ const store = new Vuex.Store({
+			state: {
+			    count: 0
+			  },
+			  mutations: {
+			    increment (state) {
+			      state.count++
+			    }
+			  },
+  			getters:{
+  				
+  			}
+			});
 new Vue({
 	el: '#app',
 	router,
+	store:store,
 	components: {
 		App
 	},
