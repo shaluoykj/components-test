@@ -10,6 +10,8 @@
 		<div @click="getUserInfo">查询个人信息2</div>
 		<div @click="getUserInfo">查询个人信息3</div>
 		<div @click="getUserInfo">查询个人信息4</div>
+		<div @click="getUserInfo">查询个人信息5</div>
+		<div @click="getUserInfo">查询个人信息6</div>
 	</div>
 </template>
 
