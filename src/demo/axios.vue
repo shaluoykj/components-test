@@ -4,6 +4,8 @@
 		<div @click="getInfo">查看设备信息</div>
 		<div @click="getInfo2">查看设备信息2</div>
 		<div @click="getUserInfo">查询个人信息</div>
+		<div @click="getUserInfo">查询个人信息</div>
+		<div @click="getUserInfo">查询个人信息</div>
 	</div>
 </template>
 
